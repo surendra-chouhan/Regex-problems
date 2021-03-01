@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class regexProblems{
 	boolean validName;
 	String firstName;
+	String lastName;
 
 	Scanner sc = new Scanner(System.in);
 
@@ -12,7 +13,6 @@ public class regexProblems{
 		firstName = sc.next();
 
 		validName = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(firstName).matches();
-		System.out.println(validName);
 		if(validName == true){
 			System.out.println("First Name is valid");
 		}
@@ -22,9 +22,24 @@ public class regexProblems{
 
 	}
 
+	public void validateLastName(){
+		System.out.println("Enter Last Name (It should start with Capital Letter and have atleast 3 letters)");
+		lastName = sc.next();
+
+		validName = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(lastName).matches();
+		if(validName == true){
+			System.out.println("Last Name is valid");
+		}
+		else{
+			System.out.println("Last Name is not valid");
+		}
+
+	}
+
 	public static void main(String args[]){
 		regexProblems user = new regexProblems();
 
 		user.validateFirstName();
+		user.validateLastName();
 	}
 }
