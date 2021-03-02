@@ -6,6 +6,7 @@ public class regexProblems{
 	String lastName;
 	String email;
 	String mobileNumber;
+	String password;
 
 	Scanner sc = new Scanner(System.in);
 
@@ -54,7 +55,6 @@ public class regexProblems{
 	public void validateMobileNumber(){
 		System.out.println("\nEnter Phone Number : ");
 		mobileNumber = sc.nextLine();
-		System.out.println(mobileNumber);
 
 		boolean validMobileNumber = Pattern.compile("^[0-9]{2}[ ][0-9]{10}$").matcher(mobileNumber).matches();
 
@@ -67,6 +67,20 @@ public class regexProblems{
 
 	}
 
+	public void validatePassword(){
+		System.out.println("\nEnter Password : ");
+		password = sc.nextLine();
+
+		boolean validPassword = Pattern.compile(".{8,}").matcher(password).matches();
+
+		if(validPassword == true){
+			System.out.println("Password is valid");
+		}
+		else{
+			System.out.println("Password is not valid");
+		}
+	}
+
 	public static void main(String args[]){
 		regexProblems user = new regexProblems();
 
@@ -74,5 +88,6 @@ public class regexProblems{
 		user.validateLastName();
 		user.validateEmail();
 		user.validateMobileNumber();
+		user.validatePassword();
 	}
 }
