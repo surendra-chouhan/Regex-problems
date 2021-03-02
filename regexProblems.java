@@ -19,7 +19,8 @@ public class regexProblems{
 			System.out.println("\nFirst Name is valid");
 		}
 		else{
-			System.out.println("\nFirst Name is not valid");
+			System.out.println("\nFirst Name is not valid. \nEnter again");
+			validateFirstName();
 		}
 
 	}
@@ -33,7 +34,8 @@ public class regexProblems{
 			System.out.println("\nLast Name is valid");
 		}
 		else{
-			System.out.println("\nLast Name is not valid");
+			System.out.println("\nLast Name is not valid \nEnter again");
+			validateLastName();
 		}
 
 	}
@@ -48,7 +50,8 @@ public class regexProblems{
 			System.out.println("\nEmail ID is valid");
 		}
 		else{
-			System.out.println("\nEmail ID is not valid");
+			System.out.println("\nEmail ID is not valid \nEnter again");
+			validateEmail();
 		}
 	}
 
@@ -62,7 +65,8 @@ public class regexProblems{
 			System.out.println("\nMobile Number is valid");
 		}
 		else{
-			System.out.println("\nMobile Number is not valid");
+			System.out.println("\nMobile Number is not valid \nEnter again");
+			validateMobileNumber();
 		}
 
 	}
@@ -77,7 +81,8 @@ public class regexProblems{
 			System.out.println("Password is valid");
 		}
 		else{
-			System.out.println("Password is not valid");
+			System.out.println("Password is not valid \nEnter again");
+			validatePassword();
 		}
 	}
 
