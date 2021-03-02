@@ -71,7 +71,7 @@ public class regexProblems{
 		System.out.println("\nEnter Password : ");
 		password = sc.nextLine();
 
-		boolean validPassword = Pattern.compile("^(?=.*[A-Z]).{8,20}$").matcher(password).matches();
+		boolean validPassword = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9]).{8,20}$").matcher(password).matches();
 
 		if(validPassword == true){
 			System.out.println("Password is valid");
