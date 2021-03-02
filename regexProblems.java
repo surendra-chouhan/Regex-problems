@@ -2,38 +2,52 @@ import java.util.regex.*;
 import java.util.Scanner;
 
 public class regexProblems{
-	boolean validName;
 	String firstName;
 	String lastName;
+	String email;
 
 	Scanner sc = new Scanner(System.in);
 
 	public void validateFirstName(){
-		System.out.println("Enter First Name (It should start with Capital Letter and have atleast 3 letters)");
+		System.out.println("\nEnter First Name (It should start with Capital Letter and have atleast 3 letters)");
 		firstName = sc.next();
 
-		validName = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(firstName).matches();
-		if(validName == true){
-			System.out.println("First Name is valid");
+		boolean validFirstName = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(firstName).matches();
+		if(validFirstName == true){
+			System.out.println("\nFirst Name is valid");
 		}
 		else{
-			System.out.println("First Name is not valid");
+			System.out.println("\nFirst Name is not valid");
 		}
 
 	}
 
 	public void validateLastName(){
-		System.out.println("Enter Last Name (It should start with Capital Letter and have atleast 3 letters)");
+		System.out.println("\nEnter Last Name (It should start with Capital Letter and have atleast 3 letters)");
 		lastName = sc.next();
 
-		validName = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(lastName).matches();
-		if(validName == true){
-			System.out.println("Last Name is valid");
+		boolean validLastName = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(lastName).matches();
+		if(validLastName == true){
+			System.out.println("\nLast Name is valid");
 		}
 		else{
-			System.out.println("Last Name is not valid");
+			System.out.println("\nLast Name is not valid");
 		}
 
+	}
+
+	public void validateEmail(){
+		System.out.println("\nEnter Emaild ID : ");
+		email = sc.next();
+
+		boolean validEmail = Pattern.compile("^[a-zA-Z0-9]+(?:[\\+._-][a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z]{1,}+)*$").matcher(email).matches();
+
+		if(validEmail == true){
+			System.out.println("\nEmail ID is valid");
+		}
+		else{
+			System.out.println("\nEmail ID is not valid");
+		}
 	}
 
 	public static void main(String args[]){
@@ -41,5 +55,6 @@ public class regexProblems{
 
 		user.validateFirstName();
 		user.validateLastName();
+		user.validateEmail();
 	}
 }
